@@ -26,8 +26,6 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     //recuperation de la path à travers router
     this.path = this.router.url;
-
-
     //create form input by formBuilder
     this.signupForm = this.formBuilder.group({
       
@@ -39,7 +37,7 @@ export class SignupComponent implements OnInit {
 
     })
   }
-  //event function
+  //event function the even github
   signup() {
     // if (this.path=="/signupAdmin") {
     //   this.signupForm.value.role= "admin"
