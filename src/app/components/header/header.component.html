@@ -1,0 +1,62 @@
+<div class="site-mobile-menu site-navbar-target">
+  <div class="site-mobile-menu-header">
+    <div class="site-mobile-menu-close">
+      <span class="icon-close2 js-menu-toggle"></span>
+    </div>
+  </div>
+  <div class="site-mobile-menu-body"></div>
+</div>
+
+<header class="site-navbar py-4" role="banner">
+
+  <div class="container">
+    <div class="d-flex align-items-center">
+      <div class="site-logo">
+        <a routerLink="index.html">
+          <img src="assets/images/logo.png" alt="Logo">
+        </a>
+      </div>
+      <div class="ml-auto">
+        <nav class="site-navigation position-relative text-right" role="navigation">
+          <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+            <li class="active"><a routerLink="" class="nav-link">Home</a></li>
+            <li class="active"><a routerLink="myProfile" class="nav-link">Profile</a></li>
+            <li><a routerLink="allmatches" class="nav-link">Matches</a></li>
+            <li><a routerLink="players" class="nav-link">Players</a></li>
+            <li>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dashboard
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <a class="dropdown-item" routerLink="add-match">Add Matches</a>
+                  <a class="dropdown-item" routerLink="add-team">Add Team</a>
+                  <a class="dropdown-item" routerLink="add-player"> Add players</a>
+                  <a class="dropdown-item" routerLink="admin"> Admin</a>
+                  <a class="dropdown-item" routerLink="searchMatches"> Search Match</a>
+                  <a class="dropdown-item" routerLink="weather"> Search weather</a>
+
+
+
+                </div>
+              </div>
+            </li>
+            <li><a routerLink="signin" class="nav-link" *ngIf="!userIsAuthenticated">Login</a></li>
+            <li><a class="nav-link" *ngIf="userIsAuthenticated">{{user}}</a></li>
+            <li><a *ngIf="userIsAuthenticated" (click)="logout()">Logout</a></li>
+            <li><a *ngIf="!userIsAuthenticated" routerLink="subscription" class="nav-link">Signup</a></li>
+
+            <!-- <li><a routerLink="signin" class="nav-link">Login</a></li>
+              <li><a routerLink="subscription" class="nav-link">Signup</a></li> -->
+          </ul>
+        </nav>
+
+        <a href="#"
+          class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
+            class="icon-menu h3 text-white"></span></a>
+      </div>
+    </div>
+  </div>
+
+</header>

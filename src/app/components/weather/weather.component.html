@@ -1,0 +1,56 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">weather</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-wrap container">
+  
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <form [formGroup]="weatherForm">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="city" placeholder="city">
+              </div>
+              <div *ngIf="weatherForm.controls['city'].invalid &&
+                    (weatherForm.controls['city'].touched ||
+                    weatherForm.controls['city'].dirty)">
+                <div *ngIf="weatherForm.controls['city'].errors.required" style="color: red;">
+                 City Name is required
+                </div>
+              
+            </div>
+  
+              
+              <div class="form-group text-center" style="margin-top: 5px;">
+                <input type="submit" class="btn btn-primary py-3 px-5" [disabled]="weatherForm.invalid" (click)="weatherSearch()"
+                  value="weatherSearch">
+              </div>
+
+              <div class="text">
+                <p class="mb-4">SUNRISE: {{weather?.sunrise*1000 | date:"hh:mm"}} </p>
+                <p class="mb-4">SUNSET: {{weather?.sunset *1000 | date:"hh:mm"}} </p>
+                <p class="mb-4">TEMP:  {{weather?.temperature }} </p>
+                <p class="mb-4">HUMIDITY: {{weather?.humidity}} </p> 
+                <p class="mb-4"> Icon : <img [src]="weather.icone" alt=""> </p> 
+
+
+                
+              </div>
+
+
+
+
+            </form>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+  </div>

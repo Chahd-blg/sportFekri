@@ -1,0 +1,37 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Stadium</th>
+        <th scope="col">Fondation</th>
+        <th scope="col">Actions</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elt of teamsTab">
+        <th scope="row">{{elt._id}}</th>
+        <th scope="row">{{elt.teamName}}</th>
+        <th scope="row">{{elt.teamOwner}}</th>
+        <th scope="row">{{elt.teamStadium}}</th>
+        <th scope="row">{{elt.teamFondation}}</th>
+        <td>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Actions
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="submit" (click)="getTeamById(elt._id)">Display</button>
+            <button class="dropdown-item" type="submit" (click)="editTeams(elt._id)">Edit</button>
+            <button class="dropdown-item" type="submit" (click)="deleteTeamById(elt._id)">Delete</button>
+
+          </div>
+        </div>
+      </td>
+      </tr>
+     
+    </tbody>
+  </table>
+  

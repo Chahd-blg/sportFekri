@@ -1,0 +1,36 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Age</th>
+        <th scope="col">Name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Number</th>
+        <th scope="col">Actions</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elt of playersTab">
+        <th scope="row">{{elt.age}}</th>
+        <td>{{elt.name}}</td>
+        <td>{{elt.position}}</td>
+        <td>{{elt.number}}</td>
+        <td>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Actions
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="submit" (click)="displayPlayers(elt._id)">Display</button>
+            <button class="dropdown-item" type="submit"(click)="editPlayers(elt._id)" >Edit</button>
+            <button class="dropdown-item" type="submit" (click)="deletePlayers(elt._id)">Delete</button>
+
+          </div>
+        </div>
+      </td>
+      </tr>
+     
+    
+    </tbody>
+  </table>
+  

@@ -1,0 +1,47 @@
+<form class="mt-5">
+  <div class="text-center">
+  <label for="">Filter By Team One | Team Two</label>
+  <input type="text" [(ngModel)]='val' [ngModelOptions]="{standalone:
+ true}">
+  </div>
+ </form>
+ Here is value : {{val}}
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Match ID</th>
+        <th scope="col">Score one</th>
+        <th scope="col">Score two</th>
+        <th scope="col">Team one</th>
+        <th scope="col">Team two</th>
+        <th scope="col">Actions</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elt of matches | myFilter:val">
+        <th scope="row">{{elt._id}}</th>
+        <th scope="row">{{elt.scoreOne}}</th>
+        <td>{{elt.scoreTwo}}</td>
+        <td>{{elt.teamOne}}</td>
+        <td>{{elt.teamTwo}}</td>
+       
+        <td>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Actions
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="submit" (click)="displayMatches(elt._id)">Display</button>
+            <button class="dropdown-item" type="submit"  (click)="goToEdit(elt._id)">Edit</button>
+            <button class="dropdown-item" type="submit"  (click)="deleteMatchById(elt._id)" >Delete</button>
+
+          </div>
+        </div>
+      </td>
+      </tr>
+    
+    
+    </tbody>
+  </table>
+  
